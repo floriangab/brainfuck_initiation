@@ -36,22 +36,6 @@ int generator(int ac, char **av)
     char CC[256] = "/usr/bin/gcc";
     int no_compile = 0; /* Don't compile, just generate C source file */
 
-    switch(getopt(ac, av, "o:c:knh")){
-        case 'o':
-            output_name = strdup(optarg);
-            break;
-        case 'c':
-            c_output_name = strdup(optarg);
-            break;
-        case 'n':
-            no_compile = 1;
-            break;
-        case 'h':
-            print_help(av);
-            break;
-        default:
-            break;
-    }
     if (error(ac, av) == EPITECH_ERROR || \
         compile(output_name, c_output_name, CC, no_compile) == EPITECH_ERROR)
         return EPITECH_ERROR;
@@ -67,7 +51,7 @@ void create_file(void){
     fprintf(outfile, "\n** florian_gabon");
     fprintf(outfile, "\n*/\n");
     fprintf(outfile, "#include <stdio.h>\n");
-    fprintf(outfile, "int main()\n{\n\tchar a[30000];\n\tchar*ptr=a;\n\n");
+    fprintf(outfile, "int main()\n{\n\tchar a[30000];\n\tchar *ptr = a;\n\n");
     while((c=fgetc(infile)) != EOF){
         switch(c) {
             case '>': fprintf(outfile, "\tptr++;\n"); break;
