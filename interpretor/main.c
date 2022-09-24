@@ -1,5 +1,5 @@
 /*
-** EPITECH PROJECT, 2020
+** PROJECT, 2020
 ** brainfuck interpretor
 ** File description:
 ** main function
