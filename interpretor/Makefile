@@ -1,5 +1,5 @@
 ##
-## EPITECH PROJECT, 2020
+## PROJECT, 2020
 ## makefile
 ## File description:
 ## use to compile
